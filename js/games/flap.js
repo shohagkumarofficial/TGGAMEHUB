@@ -18,4 +18,3 @@ draw(){const g=c.createLinearGradient(0,0,0,H);g.addColorStop(0,'#ff9f6b');g.add
  c.fillStyle='#ff9f1c';c.beginPath();c.ellipse(-4,3+Math.sin(this.a*.4)*3,9,5,0,0,7);c.fill();
  c.fillStyle='#fff';c.beginPath();c.arc(8,-4,5,0,7);c.fill();c.fillStyle='#15123b';c.beginPath();c.arc(10,-4,2.2,0,7);c.fill();
  c.fillStyle='#ff6b4a';c.beginPath();c.moveTo(14,0);c.lineTo(25,3);c.lineTo(14,7);c.fill();c.restore()}};
-                   
