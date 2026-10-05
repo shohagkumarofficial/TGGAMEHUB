@@ -104,5 +104,4 @@ export function end(m, win) {
   if (S.cur && S.cur.leave) S.cur.leave();
   S.onEnd && S.onEnd(m || 'Game over', w);
   setTimeout(() => { if (S.over && S.cur) $('#ov').classList.add('on'); }, w ? 900 : 600);
-                                              }
-                             
+}
