@@ -19,3 +19,12 @@ No build step. Upload this folder to Git (or `vercel --prod`), framework preset:
 - Data is stored in `localStorage` (no database yet).
 - `?dev=1` enables a test hook and simulated ads; do not use in production links.
 - Adsgram block id is set in `js/economy.js`.
+
+## Bot (/start)
+`api/webhook.js` answers `/start` with a "Play now" button. `api/setup.js` registers it.
+1. Vercel → Settings → Environment Variables: `BOT_TOKEN` (and optional `WEBHOOK_SECRET`), then redeploy.
+2. Open `https://YOUR-DOMAIN/api/setup` once. It sets the webhook, menu button and /start command.
+
+## Ads
+Monetag is used first (`ADS` order in `js/economy.js`); Adsgram is the fallback.
+After Adsgram approves, change it to `const ADS = ['adsgram','monetag']`.

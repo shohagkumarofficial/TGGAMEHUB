@@ -129,4 +129,3 @@ html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family
 @keyframes scrIn{from{opacity:0;transform:translateY(10px)}}
 .gc.hero .ic{background-image:radial-gradient(circle at 50% 50%,rgba(255,200,61,.10),transparent 60%)}
 :focus-visible{outline:3px solid var(--sky);outline-offset:2px}
-      

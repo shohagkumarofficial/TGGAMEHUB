@@ -54,8 +54,16 @@ function gain() {
   P.st.ads++; saveP(); chk(); addLife(); sfx('coin'); hap('success'); toast('+1 life');
   if (pend) { const k = pend; pend = null; closeNL(); tryPlay(k); }
 }
+/* Ad provider order. Switch to ['adsgram','monetag'] once Adsgram approves the app. */
+const ADS = ['monetag', 'adsgram'];
 function watchAd() {
   if (adBusy) return;
+  if (ADS[0] == 'monetag' && typeof window.show_11958743 == 'function') {
+    adBusy = 1;
+    Promise.resolve(window.show_11958743()).then(() => { adBusy = 0; gain(); })
+      .catch(() => { adBusy = 0; toast('No ad available. Try again soon.'); });
+    return;
+  }
   if (!AD && window.Adsgram) { try { AD = window.Adsgram.init({ blockId: 'int-38036' }); } catch (e) {} }
   if (!AD) {
     if (DEV) { adBusy = 1; toast('Dev mode: simulating an ad…'); setTimeout(() => { adBusy = 0; gain(); }, 1500); }
